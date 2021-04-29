@@ -1,0 +1,1 @@
+"""Package which contains the different windows of the application."""

@@ -1,0 +1,1 @@
+"""Package which contains different widgets for the windows."""
