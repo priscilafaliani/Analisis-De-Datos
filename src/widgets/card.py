@@ -26,7 +26,8 @@ def card(icon_path, title, subtitle, key):
     button = sg.Button(
         button_text=g.CARD_BUTTON_TEXT,
         button_color=(g.WHITE, g.DARK_GRAY),
-        mouseover_colors=(g.WHITE, g.ORANGE)
+        mouseover_colors=(g.WHITE, g.ORANGE),
+        key=key
     )
 
     container = sg.Column(

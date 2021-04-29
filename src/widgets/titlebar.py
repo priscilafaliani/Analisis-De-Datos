@@ -10,7 +10,8 @@ def titlebar():
         image_size=(20, 20),
         image_subsample=(2),
         button_color=(g.LIGHT_GRAY, g.LIGHT_GRAY),
-        border_width=0
+        border_width=0,
+        key=g.EXIT_EVENT
     )
 
     container = sg.Column(
