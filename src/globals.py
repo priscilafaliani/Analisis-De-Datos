@@ -34,6 +34,13 @@ CARD_BUTTON_TEXT = 'LEER MÁS'
 POPUP_BUTTON1_TEXT = 'ANALIZAR'
 POPUP_BUTTON2_TEXT = 'VOLVER ATRÁS'
 
+# ------ DATASETS ------
+
+DATASETS_PATH = os.path.join('resources', 'datasets')
+
+TIL_PATH = os.path.join(DATASETS_PATH, 'todayilearned.csv')
+LPT_PATH = os.path.join(DATASETS_PATH, 'LifeProTips.csv')
+
 # ------ EXPLAIN LIKE I'M FIVE ------
 
 TIL_KEY = '-TIL-'
