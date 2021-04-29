@@ -32,7 +32,7 @@ MAIN_WINDOW_SUBTITLE = 'SELECCIONE UN SET DE DATOS'
 CARD_BUTTON_TEXT = 'LEER MÁS'
 
 POPUP_BUTTON1_TEXT = 'ANALIZAR'
-POPUP_BUTTON2_TEXT = 'CANCELAR'
+POPUP_BUTTON2_TEXT = 'VOLVER ATRÁS'
 
 # ------ EXPLAIN LIKE I'M FIVE ------
 
@@ -43,7 +43,6 @@ TIL_CARD_SUBTITLE = 'APRENDEMOS ALGO NUEVO TODOS LOS DÍAS\n¿QUÉ APRENDISTE HO
 
 TIL_CONTENT = '¿Qué hechos interesantes aprendió la gente?\nNos puede sorprender también'
 
-
 # ------- LIFE PRO TIPS ------
 
 LPT_KEY = '-LPT-'
@@ -52,6 +51,20 @@ LPT_CARD_TITLE = 'LIFE PRO TIPS'
 LPT_CARD_SUBTITLE = 'TIPS QUE MEJORAN TU VIDA DE\nUNA FORMA U OTRA'
 
 LPT_CONTENT = 'Un \'Life Pro Tip\' es una acción específica\nque da resultados definitivos.\n\n¿De qué manera podemos mejorar nuestra vida?'
+
+# ------ FOR FUNCTIONS ------
+
+# used in components/menu when opening a popup
+POPUP_PARAMETERS = {
+    '-TIL-': [TIL_CARD_TITLE, TIL_CARD_SUBTITLE, TIL_CONTENT],
+    '-LPT-': [LPT_CARD_TITLE, LPT_CARD_SUBTITLE, LPT_CONTENT]
+}
+
+# ------- EVENTS -------
+
+EXIT_EVENT = '-EXIT-'
+ANALYSE_EVENT = '-ANALIZAR-'
+RETURN_EVENT = '-VOLVER ATRÁS-'
 
 # ------ GLOBAL ------
 
