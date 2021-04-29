@@ -7,6 +7,7 @@ BACKGROUND = '#ecf0f1',
 LIGHT_GREY = '#34495e'
 DARK_GREY = '#2c3e50'
 ORANGE = '#e67e22'
+BLUE = '#3498db'
 WHITE = '#FFFFFF'
 BLACK = '#000000'
 
@@ -19,9 +20,10 @@ MAIN_WINDOW_SUBTITLE_FONT = ('courier', 15, 'bold')
 
 ICONS_PATH = os.path.join('resources', 'icons')
 
-EXIT_BUTTON_ICON = os.path.join(ICONS_PATH, 'exit')
+EXIT_BUTTON_ICON = os.path.join(ICONS_PATH, 'exit.png')
 ELI5_ICON = os.path.join(ICONS_PATH, 'eli5.png')
 LTP_ICON = os.path.join(ICONS_PATH, 'lpt.png')
+POPUP_ICON = os.path.join(ICONS_PATH, 'chart.png')
 
 # ------ TEXT ------
 
@@ -30,6 +32,8 @@ MAIN_WINDOW_SUBTITLE = 'SELECCIONE UN SET DE DATOS'
 
 CARD_BUTTON_TEXT = 'LEER MÁS'
 
+POPUP_BUTTON1_TEXT = 'ANALIZAR'
+POPUP_BUTTON2_TEXT = 'CANCELAR'
 
 # ------ EXPLAIN LIKE I'M FIVE ------
 ELI5_KEY = '-ELI5-'
@@ -37,12 +41,16 @@ ELI5_KEY = '-ELI5-'
 ELI5_CARD_TITLE = 'EXPLAIN LIKE I\'M FIVE'
 ELI5_CARD_SUBTITLE = 'EXPLICACIONES DE TEMAS COMPLETOS\nHECHOS FÁCIL'
 
+ELI5_CONTENT = '¿Qué preguntaron los más curiosos?\n¿Por qué tantos upvotes?'
+
 
 # ------- LIFE PRO TIPS ------
 LPT_KEY = '-LPT-'
 
 LPT_CARD_TITLE = 'LIFE PRO TIPS'
 LPT_CARD_SUBTITLE = 'ACCIONES ESPECÍFICAS QUE PUEDEN\nMEJORAR NUESTRA VIDA'
+
+LPT_CONTENT = '¿Cuál es el mejor tip?\n¿Son realistas?¿Útiles?'
 
 # ------ GLOBAL ------
 
