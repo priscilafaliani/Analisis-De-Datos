@@ -15,7 +15,7 @@ def build(title, subtitle, content):
     title = sg.Text(
         text=title,
         background_color=g.WHITE,
-        text_color=g.BLUE,
+        text_color=g.VIOLET,
         justification='c'
     )
 

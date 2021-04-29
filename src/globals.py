@@ -7,14 +7,13 @@ BACKGROUND = '#ecf0f1',
 LIGHT_GREY = '#34495e'
 DARK_GREY = '#2c3e50'
 ORANGE = '#e67e22'
-BLUE = '#3498db'
+VIOLET = '#9b59b6'
 WHITE = '#FFFFFF'
 BLACK = '#000000'
 
 # -------- FONTS --------
 
-MAIN_WINDOW_TITLE_FONT = ('times', 30)
-MAIN_WINDOW_SUBTITLE_FONT = ('courier', 15, 'bold')
+
 
 # -------- ICONS --------
 
@@ -58,5 +57,6 @@ sg.set_options(
     auto_size_buttons=False,
     background_color=BACKGROUND,
     element_padding=(0, 0),
-    margins=(0, 0)
+    margins=(0, 0),
+    font='helvetica'
 )

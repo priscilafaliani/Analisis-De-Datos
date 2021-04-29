@@ -10,7 +10,6 @@ def heading(title, subtitle=''):
         background_color=g.DARK_GREY,
         text_color=g.WHITE,
         justification='c',
-        font=g.MAIN_WINDOW_TITLE_FONT,
         grab=True
     )
 
@@ -19,7 +18,6 @@ def heading(title, subtitle=''):
         background_color=g.DARK_GREY,
         text_color=g.WHITE,
         justification='c',
-        font=g.MAIN_WINDOW_SUBTITLE_FONT,
         grab=True
     )
 
