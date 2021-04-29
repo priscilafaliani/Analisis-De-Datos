@@ -9,13 +9,14 @@ def titlebar():
         image_filename=g.EXIT_BUTTON_ICON,
         image_size=(20, 20),
         image_subsample=(2),
-        button_color=(g.LIGHT_GREY, g.LIGHT_GREY)
+        button_color=(g.LIGHT_GREY, g.LIGHT_GREY),
+        border_width=0
     )
 
     container = sg.Column(
         layout=[[exit_button]],
         vertical_alignment='c',
-        element_justification='c',
+        element_justification='r',
         expand_x=True,
         background_color=g.LIGHT_GREY,
         grab=True

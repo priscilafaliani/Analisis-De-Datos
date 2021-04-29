@@ -29,7 +29,7 @@ def card(icon_path, title, subtitle, key):
         mouseover_colors=(g.WHITE, g.ORANGE)
     )
 
-    container = sg.Colum(
+    container = sg.Column(
         layout=[
             [icon],
             [title],
