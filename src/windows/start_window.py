@@ -10,11 +10,11 @@ def build():
     ttitlebar = titlebar()
     hheading = heading(g.MAIN_WINDOW_TITLE, g.MAIN_WINDOW_SUBTITLE)
 
-    eli5 = card(
-        g.ELI5_ICON, 
-        g.ELI5_CARD_TITLE, 
-        g.ELI5_CARD_SUBTITLE, 
-        g.ELI5_KEY
+    til = card(
+        g.TIL_ICON, 
+        g.TIL_CARD_TITLE, 
+        g.TIL_CARD_SUBTITLE, 
+        g.TIL_KEY
     )
 
     lpt = card(
@@ -26,7 +26,7 @@ def build():
 
     cards_container = sg.Column(
         layout=[
-            [eli5, lpt]
+            [til, lpt]
         ],
         background_color=g.WHITE,
         element_justification='c',

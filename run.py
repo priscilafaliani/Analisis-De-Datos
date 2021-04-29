@@ -4,5 +4,5 @@ import src.globals as g
 
 
 start_window.build().read(close=True)
-popup.build(g.ELI5_CARD_TITLE, g.ELI5_CARD_SUBTITLE, g.ELI5_CONTENT).read(close=True)
+popup.build(g.TIL_CARD_TITLE, g.TIL_CARD_SUBTITLE, g.TIL_CONTENT).read(close=True)
 popup.build(g.LPT_CARD_TITLE, g.LPT_CARD_SUBTITLE, g.LPT_CONTENT).read(close=True)
