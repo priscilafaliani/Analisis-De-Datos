@@ -35,13 +35,13 @@ def build(title, subtitle, content):
 
     analyse_button = sg.Button(
         button_text=g.POPUP_BUTTON1_TEXT,
-        button_color=(g.WHITE, g.DARK_GREY),
+        button_color=(g.WHITE, g.DARK_GRAY),
         mouseover_colors=(g.WHITE, g.ORANGE)
     )
 
     cancel_button = sg.Button(
         button_text=g.POPUP_BUTTON2_TEXT,
-        button_color=(g.WHITE, g.DARK_GREY),
+        button_color=(g.WHITE, g.DARK_GRAY),
         mouseover_colors=(g.WHITE, g.ORANGE)
     )
 
