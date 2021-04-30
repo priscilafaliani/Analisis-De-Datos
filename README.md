@@ -15,7 +15,7 @@ Esta es la resolución a una actividad que nos propusieron en la clase teória d
 
 
 ## Explicación
-La propuesta consistía en:
+La trabajo consistía en:
 - Crear una GUI que nos permita elegir entre dos datasets para analizar.
 - La GUI debía estar hecha en PySimpleGUI
 - Guardar el resultado de los análisis en un archivo JSON.
@@ -26,6 +26,8 @@ La propuesta consistía en:
 Utilizo 4 datasets.
 
 - Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. El análsis obtiene los mejores 10 de cada uno.
+
+Este análisis es medio tonto, pero quería dejarlo porque obtuve los datos yo y porque es mi aplicación y hago lo que quiero.
 
 - El segundo es un dataset acerca de las maneras que se escribe el programa 'hello world' en diferentes lenguajes. El análisis obtiene algunos con extensiones arbitrarias.
 
