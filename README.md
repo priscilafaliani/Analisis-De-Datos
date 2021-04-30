@@ -1,5 +1,17 @@
+- [Actividad Teórica](#actividad-teórica)
+  - [Imágenes](#imágenes)
+      - [Pantalla inicial](#pantalla-inicial)
+  - [Explicación](#explicación)
+  - [Mi propuesta](#mi-propuesta)
+  - [Atribución](#atribución)
+
 # Actividad Teórica
 Esta es la resolución a una actividad que nos propusieron en la clase teória de la materia Seminario de Lenguajes.
+
+## Imágenes
+
+#### Pantalla inicial
+![Initial Screen](img/image_2021-04-30_18-02-17.png)
 
 
 ## Explicación
@@ -10,17 +22,19 @@ La propuesta consistía en:
 - Debían ser análisis sobre datos que podamos usar en el trabajo final.
 - Opcionalmente, podíamos obtener imágenes como parte de los análisis.
 
-## Mi Propuesta
-Utilizo 3 datasets, dado que 2 de ellos son prácticamente iguales.
+## Mi propuesta
+Utilizo 4 datasets.
 
-Estos 2, son datasets obtenidos por mí. Cree un script, también en Python, que me permitió recolectar los datos.
-Son una recopilación de posts de dos subreddits de bueno, **Reddit**.
+- Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. El análsis obtiene los mejores 10 de cada uno.
 
+- El segundo es un dataset acerca de las maneras que se escribe el programa 'hello world' en diferentes lenguajes. El análisis obtiene algunos con extensiones arbitrarias.
 
-El dataset que queda es sobre la colección de obras del museo Rijkmuseum, ubicado en Amsterdam. Me pareció interesante, sobretodo porque tienen una política de "información abierta" muy clara (también porque hay imágenes).
+- El tercero es sobre ventas de juegos. El análisis consiste en obtener aquellos que salieron antes del 2000 y los 10 que más ventas tuvieron.
 
 ## Atribución
-No encontré información acerca de la licencia y el uso de los datos de Reddit.
-Acá se encuentran los datos del [museo.](https://data.rijksmuseum.nl/)
+- No encontré información acerca de la licencia y el uso de los datos de Reddit.
+- El dataset de ventas de juegos no especifica ninguna licencia.
+- El dataset de lenguajes de programación tiene licencia: [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/)
+
 Los íconos que utilicé son hechos por [Freepik.](https://www.flaticon.com/authors/freepik)
 
