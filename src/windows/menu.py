@@ -3,13 +3,15 @@ import PySimpleGUI as sg
 import src.globals.keys as k
 import src.globals.paths as p
 import src.globals.color_palette as c
+import src.globals.texts.hw_texts as hw_texts
+import src.globals.texts.gs_texts as gs_texts
 import src.globals.texts.menu_texts as menu_texts
 import src.globals.texts.reddit_texts as reddit_texts
-import src.globals.texts.museum_texts as museum_texts
 
 from src.widgets.titlebar import titlebar
 from src.widgets.heading import heading
 from src.widgets.card import card
+
 
 def build():
     ttitlebar = titlebar()
@@ -21,19 +23,26 @@ def build():
         reddit_texts.REDDIT_CARD_SUBTITLE,
         k.REDDIT_KEY
     )
-
-    museum = card(
-        p.MUSEUM_ICON, 
-        museum_texts.MUSEUM_CARD_TILTE, 
-        museum_texts.MUSEUM_CARD_SUBTITLE, 
-        k.MUSEUM_KEY
+    
+    hello_world = card(
+        p.HW_ICON,
+        hw_texts.HW_CARD_TITLE,
+        hw_texts.HW_CARD_SUBTITLE,
+        k.HW_KEY
     )
-
+    
+    games_sales = card(
+        p.GAMES_ICON,
+        gs_texts.GS_CARD_TITLE,
+        gs_texts.GS_CARD_SUBTITLE,
+        k.GS_KEY    
+    )
+    
     cards_container = sg.Column(
         layout=[
-            [reddit, museum]
+            [reddit, hello_world, games_sales]
         ],
-        background_color=c.WHITE,
+        background_color=c.BACKGROUND,
         element_justification='c',
         vertical_alignment='c'
     )

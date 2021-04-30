@@ -9,11 +9,12 @@ def titlebar():
     """Title bar with an exit button."""
     exit_button = sg.Button(
         image_filename=p.EXIT_BUTTON_ICON,
-        image_size=(20, 20),
-        image_subsample=(2),
+        image_size=(18, 18),
+        image_subsample=4,
         button_color=(c.LIGHT_GRAY, c.LIGHT_GRAY),
         border_width=0,
-        key=k.EXIT_EVENT
+        key=k.EXIT_EVENT,
+        pad=(10, 10)
     )
 
     container = sg.Column(

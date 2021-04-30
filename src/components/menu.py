@@ -21,7 +21,11 @@ def loop():
         if event == k.EXIT_EVENT:
             break
         
-        if (dataset_key := handle_popup(event)) not in (k.RETURN_EVENT, k.EXIT_EVENT):
+        window.hide()
+        dataset_key = handle_popup(event)
+        window.un_hide()
+        
+        if dataset_key not in (k.RETURN_EVENT, k.EXIT_EVENT):
             handle_analysis(dataset_key)
         
     return window
