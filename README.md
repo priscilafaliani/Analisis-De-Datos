@@ -16,6 +16,11 @@ Utilizo 3 datasets, dado que 2 de ellos son prácticamente iguales.
 Estos 2, son datasets obtenidos por mí. Cree un script, también en Python, que me permitió recolectar los datos.
 Son una recopilación de posts de dos subreddits de bueno, **Reddit**.
 
----
 
 El dataset que queda es sobre la colección de obras del museo Rijkmuseum, ubicado en Amsterdam. Me pareció interesante, sobretodo porque tienen una política de "información abierta" muy clara (también porque hay imágenes).
+
+## Atribución
+No encontré información acerca de la licencia y el uso de los datos de Reddit.
+Acá se encuentran los datos del [museo.](https://data.rijksmuseum.nl/)
+Los íconos que utilicé son hechos por [Freepik.](https://www.flaticon.com/authors/freepik)
+
