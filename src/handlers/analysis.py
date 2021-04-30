@@ -17,6 +17,8 @@ def handle_analysis(key):
     func, params = m.ANALYSIS_FUNCTIONS[key]
     results = func(params)
     write_to_json(results, f'{key.replace("-", "")}_analysis.json')
+    
+    # show a finished popup
 
 
 def write_to_json(results, output_filepath):

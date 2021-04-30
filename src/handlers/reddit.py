@@ -14,7 +14,7 @@ def analyse(filepath):
         reader = csv.reader(f)
         
         # Header.
-        next(reader)
+        print(next(reader))
         
         posts = collections.Counter()
         for post in reader:
