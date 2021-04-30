@@ -12,8 +12,11 @@ ST_KEY = '-ST-'
 # ------- LIFE PRO TIPS ------
 LPT_KEY = '-LPT-'
 
-# ------ RIJKSMUSEUM ------
-MUSEUM_KEY = '-RIJKS-'
+# ------ HELLO WORLD IN PROGRAMMING LANGUAGES ------
+HW_KEY = '-HW-'
+
+# ------ GAMES SALES ------
+GS_KEY = '-GS-'
 
 # events are also keys in pysimplegui
 EXIT_EVENT = '-EXIT-'
