@@ -10,23 +10,23 @@ def build():
     ttitlebar = titlebar()
     hheading = heading(g.MAIN_WINDOW_TITLE, g.MAIN_WINDOW_SUBTITLE)
 
-    til = card(
-        g.TIL_ICON, 
-        g.TIL_CARD_TITLE, 
-        g.TIL_CARD_SUBTITLE, 
-        g.TIL_KEY
+    reddit = card(
+        g.REDDIT_ICON,
+        g.REDDIT_CARD_TITLE,
+        g.REDDIT_CARD_SUBTITLE,
+        g.REDDIT_KEY
     )
 
-    lpt = card(
-        g.LTP_ICON, 
-        g.LPT_CARD_TITLE, 
-        g.LPT_CARD_SUBTITLE, 
-        g.LPT_KEY
+    museum = card(
+        g.MUSEUM_ICON, 
+        g.MUSEUM_CARD_TILTE, 
+        g.MUSEUM_CARD_SUBTITLE, 
+        g.MUSEUM_KEY
     )
 
     cards_container = sg.Column(
         layout=[
-            [til, lpt]
+            [reddit, museum]
         ],
         background_color=g.WHITE,
         element_justification='c',

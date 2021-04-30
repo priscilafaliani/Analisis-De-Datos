@@ -4,9 +4,8 @@ from src.windows import menu
 
 from src.components import popup
 
-from src.handlers import life_pro_tips
-from src.handlers import today_i_learned
-
+from src.handlers.popups import handle_popup
+from src.handlers.analysis import handle_analysis
 
 def start():
     window = loop()
@@ -17,23 +16,12 @@ def loop():
     window = menu.build()
     
     while True:
-        event, _values = window.read()
+        event, values = window.read()
         
         if event == g.EXIT_EVENT:
             break
         
-        if wants_to_analyse(event):
-            start_analysis(event)
+        if (dataset_key := handle_popup(event)) not in (g.RETURN_EVENT, g.EXIT_EVENT):
+            handle_analysis(dataset_key)
         
     return window
-
-
-def wants_to_analyse(event):
-    return popup.pop(*g.POPUP_PARAMETERS[event])
-
-
-def start_analysis(event):
-    if event == g.LPT_KEY:
-        life_pro_tips.analyse()
-    else:
-        today_i_learned.analyse()
