@@ -16,6 +16,6 @@ MUSEUM_ICON = os.path.join(ICONS_PATH, 'museum.png')
 # ------ DATASETS ------
 DATASETS_PATH = os.path.join('resources', 'datasets')
 
-ST_PATH = os.path.join(DATASETS_PATH, 'reddit', 'Showertoughts.csv')
+ST_PATH = os.path.join(DATASETS_PATH, 'reddit', 'Showerthoughts.csv')
 LPT_PATH = os.path.join(DATASETS_PATH, 'reddit', 'LifeProTips.csv')
 RIJKS_PATH = os.path.join(DATASETS_PATH, 'rijksmuseum', 'rijksmuseum.csv')

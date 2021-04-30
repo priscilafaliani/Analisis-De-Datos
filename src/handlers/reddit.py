@@ -3,25 +3,29 @@ import collections
 import src.globals as g
 
 
-DOMAIN_COLUMN_INDEX = 2
-TITLE_COLUMN_INDEX = 4
-UPVOTES_COLUMN_INDEX = 5
-TEXT_COLUMN_INDEX = 9
+TITLE_COLUMN_INDEX = 2
+TEXT_COLUMN_INDEX = 4
+UPVOTES_COLUMN_INDEX = 7
 
 
 def analyse(filepath):
     """Returns the 10 most upvoted subreddit posts."""
-    # with open(file=filepath, mode='r', encoding='utf-8') as f:
-    #     reader = csv.reader(f)
+    with open(file=filepath, mode='r', encoding='utf-8') as f:
+        reader = csv.reader(f)
         
-    #     # Header.
-    #     next(reader)
+        # Header.
+        next(reader)
         
-    #     posts = collections.Counter()
-    #     for post in reader:
-    #         key = (post[TITLE_COLUMN_INDEX], post[TEXT_COLUMN_INDEX])
-    #         posts[key] = int(post[UPVOTES_COLUMN_INDEX])
+        posts = collections.Counter()
+        for post in reader:
+            key = (post[TITLE_COLUMN_INDEX], post[TEXT_COLUMN_INDEX])
+            posts[key] = int(post[UPVOTES_COLUMN_INDEX])
         
-    # return posts.most_common(10)
+    return clear_format(posts.most_common(10))
 
-    print(filepath)
+
+def clear_format(posts):
+    """Receives the list of data analyzed and
+        prepares it to be written to a json file.
+    """
+    return list(map(lambda post: {'Title': post[0][0], 'Content': post[0][1], 'Score': post[1]}, posts))

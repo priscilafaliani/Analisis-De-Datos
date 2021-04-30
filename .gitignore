@@ -1,2 +1,6 @@
 __pycache__/
 .gitattributes
+LPT_analysis.json
+ST_analysis.json
+RIJKS_analysis.json
+resources/output/*
