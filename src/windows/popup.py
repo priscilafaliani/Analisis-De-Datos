@@ -1,6 +1,9 @@
 import PySimpleGUI as sg
 
-import src.globals as g
+import src.globals.paths as p
+import src.globals.texts.general as g
+import src.globals.keys as k
+import src.globals.color_palette as c
 
 from src.widgets.titlebar import titlebar
 
@@ -12,28 +15,28 @@ def build(key, title, subtitle, content, choices):
     ttitlebar = titlebar()
 
     icon = sg.Image(
-        filename=g.POPUP_ICON,
-        background_color=g.WHITE
+        filename=p.POPUP_ICON,
+        background_color=c.WHITE
     )
 
     title = sg.Text(
         text=title,
-        background_color=g.WHITE,
-        text_color=g.VIOLET,
+        background_color=c.WHITE,
+        text_color=c.VIOLET,
         justification='c'
     )
 
     subtitle = sg.Text(
         text=subtitle,
-        background_color=g.WHITE,
-        text_color=g.BLACK,
+        background_color=c.WHITE,
+        text_color=c.BLACK,
         justification='c'
     )
 
     content = sg.Text(
         text=content,
-        background_color=g.WHITE,
-        text_color=g.BLACK,
+        background_color=c.WHITE,
+        text_color=c.BLACK,
         justification='c'
     )
 
@@ -45,7 +48,7 @@ def build(key, title, subtitle, content, choices):
             [subtitle],
             [content]
         ],
-        background_color=g.WHITE,
+        background_color=c.WHITE,
         element_justification='c',
         vertical_alignment='c',
     )
@@ -58,17 +61,16 @@ def build(key, title, subtitle, content, choices):
 
     continue_button = sg.Button(
         button_text=continue_button_text,
-        button_color=(g.WHITE, g.DARK_GRAY),
-        mouseover_colors=(g.WHITE, g.ORANGE),
-        key=key,
-        # target=(5, 0)
+        button_color=(c.WHITE, c.DARK_GRAY),
+        mouseover_colors=(c.WHITE, c.ORANGE),
+        key=key
     )
 
     cancel_button = sg.Button(
         button_text=g.POPUP_BUTTON2_TEXT,
-        button_color=(g.WHITE, g.DARK_GRAY),
-        mouseover_colors=(g.WHITE, g.ORANGE),
-        key=g.RETURN_EVENT
+        button_color=(c.WHITE, c.DARK_GRAY),
+        mouseover_colors=(c.WHITE, c.ORANGE),
+        key=k.RETURN_EVENT
     )
 
     container.add_row(continue_button),
@@ -92,8 +94,8 @@ def add_choices(popup, choices):
         values=choices,
         default_value=choices[0],
         size=(18, None),
-        background_color=g.WHITE,
-        text_color=g.BLACK
+        background_color=c.WHITE,
+        text_color=c.BLACK
     )
 
     popup.add_row(options_list)

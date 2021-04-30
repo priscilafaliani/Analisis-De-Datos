@@ -1,4 +1,3 @@
-import src.globals as g
 from src.windows import popup
 
 

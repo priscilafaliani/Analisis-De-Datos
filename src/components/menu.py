@@ -1,4 +1,4 @@
-from src import globals as g
+import src.globals.keys as k
 
 from src.windows import menu
 
@@ -18,10 +18,10 @@ def loop():
     while True:
         event, values = window.read()
         
-        if event == g.EXIT_EVENT:
+        if event == k.EXIT_EVENT:
             break
         
-        if (dataset_key := handle_popup(event)) not in (g.RETURN_EVENT, g.EXIT_EVENT):
+        if (dataset_key := handle_popup(event)) not in (k.RETURN_EVENT, k.EXIT_EVENT):
             handle_analysis(dataset_key)
         
     return window
