@@ -2,7 +2,6 @@ import src.globals as g
 from src.windows import popup
 
 
-def pop(title, subtitle, content):
-    window = popup.build(title, subtitle, content)
-    event, _values = window.read(close=True)
-    return event == g.ANALYSE_EVENT
+def pop(key, title, subtitle, content, *choices):
+    window = popup.build(key, title, subtitle, content, choices)
+    return window.read(close=True)
