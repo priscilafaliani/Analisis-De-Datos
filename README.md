@@ -25,7 +25,7 @@ La trabajo consistía en:
 ## Mi propuesta
 Utilizo 4 datasets.
 
-- Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. El análsis obtiene los mejores 10 de cada uno.
+- Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. El análisis obtiene los mejores 10 de cada uno.
 
 Este análisis es medio tonto, pero quería dejarlo porque obtuve los datos yo y porque es mi aplicación y hago lo que quiero.
 
