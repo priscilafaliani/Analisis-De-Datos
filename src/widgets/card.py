@@ -3,9 +3,9 @@ import PySimpleGUI as sg
 from src.globals import colors
 from src.globals.texts import general
 
+from src.widgets import fillers
 
-# space between icon and top border
-IMAGE_TOP_SEP = ((0, 0), (15, 0))
+
 # defines the width of the card & space between sub and button
 SUBTITLE_SIZE = (35, 5)
 BUTTON_SIZE = (25, 2)
@@ -17,10 +17,12 @@ CARD_SUBTITLE_FONT = ('courier', 12, 'bold')
 CARD_BUTTON_FONT = ('times', 15)
 
 def build(icon_path, title, subtitle, key):
+    # space between icon and top border
+    IMAGE_TOP_SEP = fillers.horizontal_filler(2, colors.WHITE)
+    
     icon = sg.Image(
         filename=icon_path,
         background_color=colors.WHITE,
-        pad=IMAGE_TOP_SEP
     )
 
     title = sg.Text(
@@ -52,6 +54,7 @@ def build(icon_path, title, subtitle, key):
 
     container = sg.Column(
         layout=[
+            [IMAGE_TOP_SEP],
             [icon],
             [title],
             [subtitle],
