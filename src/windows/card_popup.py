@@ -3,10 +3,10 @@ import PySimpleGUI as sg
 from src.globals.texts import general
 from src.globals import paths, keys, colors
 
-from src.widgets import titlebar, fillers
+from src.widgets import titlebar, fillers, button
 
 
-BUTTON_SIZE = (35, 2)
+POPUP_BUTTON_SIZE = (35, 2)
 # defines the width of the card 
 SUBTITLE_SIZE = (50, None)
 
@@ -17,39 +17,43 @@ POPUP_BUTTON_FONT = ('times', 15)
 
 
 def build(key, title, subtitle, content):
-    """Builds a pop up which shows information about the selected card.
-
-        OPTIONAL: a list of choices to show.
-    """
+    """Builds a pop up which shows information about the selected card."""
     ttitlebar = titlebar.build()
     
     # space between icon and top border
-    IMAGE_TOP_SEP = fillers.horizontal_filler(2, colors.WHITE)
+    TOP_SEP = fillers.horizontal_filler(2, colors.WHITE)
 
     icon = sg.Image(
         filename=paths.POPUP_ICON,
         background_color=colors.WHITE,
     )
-    
+        
     popup_content = build_popup_content(title, subtitle, content)
-    buttons = build_buttons_section(key)   
+    
+    # space between content and buttons
+    BOTTOM_CONTENT_SEP = fillers.horizontal_filler(2, colors.WHITE)
+    
+    buttons = build_buttons_section(key)
+    
+    # space between buttons and the bottom border
+    BOTTOM_SEP = fillers.horizontal_filler(1, colors.WHITE)
 
-    window = sg.Window(
+    return sg.Window(
         title='',
         layout=[
             [ttitlebar],
-            [IMAGE_TOP_SEP],
+            [TOP_SEP],
             [icon],
             [popup_content],
-            [buttons]
+            [BOTTOM_CONTENT_SEP],
+            [buttons],
+            [BOTTOM_SEP]
         ],
         no_titlebar=True,
         keep_on_top=True,
         element_justification='c',
         background_color=colors.WHITE
     )
-
-    return window
 
 
 def build_popup_content(title, subtitle, content):
@@ -73,9 +77,9 @@ def build_popup_content(title, subtitle, content):
         font=POPUP_SUBTITLE_FONT,
         size=SUBTITLE_SIZE
     )
-
-    # adds space between content and the bottom border
-    CONTENT_BOTTOM_SEP = fillers.horizontal_filler(2, colors.WHITE)
+    
+    # space between subtitle and content
+    TOP_CONTENT_SEP = fillers.horizontal_filler(1, colors.WHITE)
     
     content = sg.Text(
         text=content,
@@ -89,8 +93,8 @@ def build_popup_content(title, subtitle, content):
         layout=[
             [title],
             [subtitle],
-            [content],
-            [CONTENT_BOTTOM_SEP]
+            [TOP_CONTENT_SEP],
+            [content]
         ],
         background_color=colors.WHITE,
         element_justification='c',
@@ -100,40 +104,31 @@ def build_popup_content(title, subtitle, content):
 
 def build_buttons_section(key):
     """Returns a container with the two buttons in a popup"""
-    # space between this button and the next
-    BUTTON_BOTTOM_SEP1 = fillers.horizontal_filler(1, colors.WHITE)
     
-    continue_button = sg.Button(
-        button_text=general.POPUP_BUTTON1_TEXT,
-        button_color=(colors.WHITE, colors.DARK_GRAY),
-        mouseover_colors=(colors.WHITE, colors.ORANGE),
-        key=key,
-        size=BUTTON_SIZE,
-        font=POPUP_BUTTON_FONT
-    )
-
-    # space between this button and the bottom border
-    BUTTON_BOTTOM_SEP2 = fillers.horizontal_filler(1, colors.WHITE)
-    
-    cancel_button = sg.Button(
-        button_text=general.POPUP_BUTTON2_TEXT,
-        button_color=(colors.WHITE, colors.DARK_GRAY),
-        mouseover_colors=(colors.WHITE, colors.ORANGE),
-        key=keys.RETURN_EVENT,
-        size=BUTTON_SIZE,
-        font=POPUP_BUTTON_FONT
+    analyse = button.build(
+        general.POPUP_BUTTON1_TEXT,
+        key,
+        POPUP_BUTTON_FONT,
+        POPUP_BUTTON_SIZE
     )
     
-    container = sg.Column(
+    # space between this buttons
+    BUTTON_BOTTOM_SEP = fillers.horizontal_filler(1, colors.WHITE)
+    
+    cancel = button.build(
+        general.POPUP_BUTTON2_TEXT,
+        keys.RETURN_EVENT,
+        POPUP_BUTTON_FONT,
+        POPUP_BUTTON_SIZE
+    )
+    
+    return sg.Column(
         layout=[
-            [continue_button],
-            [BUTTON_BOTTOM_SEP1],
-            [cancel_button],
-            [BUTTON_BOTTOM_SEP2]
+            [analyse],
+            [BUTTON_BOTTOM_SEP],
+            [cancel]
         ],
         background_color=colors.WHITE,
         expand_x=True,
         element_justification='c'
     )
-    
-    return container
