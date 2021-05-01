@@ -16,7 +16,7 @@ def loop():
     while True:
         event, values = window.read()
         
-        if event == keys.EXIT_EVENT:
+        if event in (keys.EXIT_EVENT, keys.RETURN_EVENT):
             break
         
         window.hide()
@@ -24,10 +24,13 @@ def loop():
         # show the information popup
         dataset_key = handle_popup(event)
         
+        if dataset_key == keys.EXIT_EVENT:
+            break
+        
         window.un_hide()
         
         # if the user selected 'analyse' then, make the analysis
-        if dataset_key not in (keys.RETURN_EVENT, keys.EXIT_EVENT):
+        if dataset_key != keys.RETURN_EVENT:
             handle_analysis(dataset_key)
         
     return window

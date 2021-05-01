@@ -32,6 +32,9 @@ def loop():
             # show the explanation popup
             dataset_key = handle_popup(event)
             
+            if dataset_key == keys.EXIT_EVENT:
+                break
+            
             # if the user selected 'analyse' then, make the analysis
             if dataset_key not in (keys.RETURN_EVENT, keys.EXIT_EVENT):
                 handle_analysis(dataset_key)

@@ -7,6 +7,7 @@ ICONS_PATH = os.path.join('resources', 'icons')
 
 POPUP_ICON = os.path.join(ICONS_PATH, 'chart.png')
 EXIT_BUTTON_ICON = os.path.join(ICONS_PATH, 'exit.png')
+RETURN_BUTTON_ICON = os.path.join(ICONS_PATH, 'return.png')
 
 ST_ICON = os.path.join(ICONS_PATH, 'ST.png')
 LTP_ICON = os.path.join(ICONS_PATH, 'lpt.png')
