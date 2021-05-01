@@ -84,8 +84,8 @@ def build_popup_content(title, subtitle, content):
         justification='c',
         font=POPUP_CONTENT_FONT,
     )
-
-    container = sg.Column(
+    
+    return sg.Column(
         layout=[
             [title],
             [subtitle],
@@ -96,8 +96,6 @@ def build_popup_content(title, subtitle, content):
         element_justification='c',
         vertical_alignment='c',
     )
-    
-    return container
 
 
 def build_buttons_section(key):
