@@ -1,5 +1,6 @@
 from src.components import popup
 from src.globals import keys, mappers
+from src.handlers.analysis import handle_analysis
 
 
 def handle_popup(key):
