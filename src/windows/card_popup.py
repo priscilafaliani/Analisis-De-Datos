@@ -6,16 +6,14 @@ from src.globals import paths, keys, colors
 from src.widgets import titlebar, fillers
 
 
-# defines the width of the card & space between sub and button
-SUBTITLE_SIZE = (50, 4)
 BUTTON_SIZE = (35, 2)
-# separates content from buttons
-CONTENT_SIZE = (None, 4)
+# defines the width of the card 
+SUBTITLE_SIZE = (50, None)
 
-CARD_TITLE_FONT = ('times', '20', 'bold')
-CARD_SUBTITLE_FONT = ('courier', 12, 'bold')
-CARD_BUTTON_FONT = ('times', 15)
-CONTENT_FONT = ('courier', '12')
+POPUP_TITLE_FONT = ('times', '20', 'bold')
+POPUP_SUBTITLE_FONT = ('courier', 12, 'bold')
+POPUP_CONTENT_FONT = ('courier', '12')
+POPUP_BUTTON_FONT = ('times', 15)
 
 
 def build(key, title, subtitle, content):
@@ -64,7 +62,7 @@ def build_popup_content(title, subtitle, content):
         background_color=colors.WHITE,
         text_color=colors.VIOLET,
         justification='c',
-        font=CARD_TITLE_FONT
+        font=POPUP_TITLE_FONT
     )
 
     subtitle = sg.Text(
@@ -72,30 +70,31 @@ def build_popup_content(title, subtitle, content):
         background_color=colors.WHITE,
         text_color=colors.BLACK,
         justification='c',
-        font=CARD_SUBTITLE_FONT,
+        font=POPUP_SUBTITLE_FONT,
         size=SUBTITLE_SIZE
     )
 
+    # adds space between content and the bottom border
+    CONTENT_BOTTOM_SEP = fillers.horizontal_filler(2, colors.WHITE)
+    
     content = sg.Text(
         text=content,
         background_color=colors.WHITE,
         text_color=colors.BLACK,
         justification='c',
-        size=CONTENT_SIZE,
-        font=CONTENT_FONT,
-        pad=((0, 0), (0, 20))
+        font=POPUP_CONTENT_FONT,
     )
 
     container = sg.Column(
         layout=[
             [title],
             [subtitle],
-            [content]
+            [content],
+            [CONTENT_BOTTOM_SEP]
         ],
         background_color=colors.WHITE,
         element_justification='c',
         vertical_alignment='c',
-        pad=(10, 10)
     )
     
     return container
@@ -112,7 +111,7 @@ def build_buttons_section(key):
         mouseover_colors=(colors.WHITE, colors.ORANGE),
         key=key,
         size=BUTTON_SIZE,
-        font=CARD_BUTTON_FONT
+        font=POPUP_BUTTON_FONT
     )
 
     # space between this button and the bottom border
@@ -124,7 +123,7 @@ def build_buttons_section(key):
         mouseover_colors=(colors.WHITE, colors.ORANGE),
         key=keys.RETURN_EVENT,
         size=BUTTON_SIZE,
-        font=CARD_BUTTON_FONT
+        font=POPUP_BUTTON_FONT
     )
     
     container = sg.Column(
