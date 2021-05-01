@@ -22,19 +22,11 @@ CARD_BUTTON_FONT = ('times', 15)
 CONTENT_FONT = ('courier', '12')
 
 
-def build(key, title, subtitle, content, choices):
-    """Builds a pop up which shows information about the selected card.
-
-        OPTIONAL: a list of choices to show.
+def build_popup_content(title, subtitle, content):
+    """Returns a container with the content for this popup.
+    
+        This is the part that changes between popups.
     """
-    ttitlebar = titlebar.build()
-
-    icon = sg.Image(
-        filename=paths.POPUP_ICON,
-        background_color=colors.WHITE,
-        pad=IMAGE_TOP_SEP
-    )
-
     title = sg.Text(
         text=title,
         background_color=colors.WHITE,
@@ -64,7 +56,6 @@ def build(key, title, subtitle, content, choices):
 
     container = sg.Column(
         layout=[
-            [icon],
             [title],
             [subtitle],
             [content]
@@ -74,15 +65,27 @@ def build(key, title, subtitle, content, choices):
         vertical_alignment='c',
         pad=(10, 10)
     )
+    
+    return container
 
-    if choices:
-        popup = add_choices(container, choices)
-        continue_button_text = general.POPUP_BUTTON1_TEXT2
-    else:
-        continue_button_text = general.POPUP_BUTTON1_TEXT
+
+def build(key, title, subtitle, content):
+    """Builds a pop up which shows information about the selected card.
+
+        OPTIONAL: a list of choices to show.
+    """
+    ttitlebar = titlebar.build()
+
+    icon = sg.Image(
+        filename=paths.POPUP_ICON,
+        background_color=colors.WHITE,
+        pad=IMAGE_TOP_SEP
+    )
+    
+    popup_content = build_popup_content(title, subtitle, content)
 
     continue_button = sg.Button(
-        button_text=continue_button_text,
+        button_text=general.POPUP_BUTTON1_TEXT,
         button_color=(colors.WHITE, colors.DARK_GRAY),
         mouseover_colors=(colors.WHITE, colors.ORANGE),
         key=key,
@@ -101,14 +104,14 @@ def build(key, title, subtitle, content, choices):
         font=CARD_BUTTON_FONT
     )
 
-    container.add_row(continue_button),
-    container.add_row(cancel_button)
-
     window = sg.Window(
         title='',
         layout=[
             [ttitlebar],
-            [container]
+            [icon],
+            [popup_content],
+            [continue_button],
+            [cancel_button]
         ],
         no_titlebar=True,
         keep_on_top=True,
@@ -116,18 +119,3 @@ def build(key, title, subtitle, content, choices):
     )
 
     return window
-
-
-def add_choices(popup, choices):
-    """Receives a popup and adds a list of choices."""
-    options_list = sg.Combo(
-        values=choices,
-        default_value=choices[0],
-        size=(35, None),
-        background_color=colors.WHITE,
-        text_color=colors.BLACK,
-        pad=(20, 20)
-    )
-
-    popup.add_row(options_list)
-    return popup

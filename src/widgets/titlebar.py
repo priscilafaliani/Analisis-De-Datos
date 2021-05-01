@@ -2,8 +2,13 @@ import PySimpleGUI as sg
 
 from src.globals import colors, paths, keys
 
-def build():
-    """Title bar with an exit button."""
+def build(has_return=False):
+    """Title bar with an exit button.
+    
+        Optional:
+            has_return : boolean
+            Adds a return button to the titlebar
+    """
     exit_button = sg.Button(
         image_filename=paths.EXIT_BUTTON_ICON,
         image_size=(18, 18),
