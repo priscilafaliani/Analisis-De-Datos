@@ -9,7 +9,24 @@ from src.widgets import titlebar, heading, card
 def build():
     ttitlebar = titlebar.build()
     hheading = heading.build(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
+    cards = build_card_section()
 
+    window = sg.Window(
+        title='',
+        layout=[
+            [ttitlebar],
+            [hheading],
+            [cards]
+        ],
+        no_titlebar=True,
+        keep_on_top=True
+    )
+
+    return window
+
+
+def build_card_section():
+    """Returns a container with a row of cards for the menu."""
     reddit = card.build(
         paths.REDDIT_ICON,
         reddit_texts.REDDIT_CARD_TITLE,
@@ -39,16 +56,5 @@ def build():
         element_justification='c',
         vertical_alignment='c'
     )
-
-    window = sg.Window(
-        title='',
-        layout=[
-            [ttitlebar],
-            [hheading],
-            [cards_container]
-        ],
-        no_titlebar=True,
-        keep_on_top=True
-    )
-
-    return window
+    
+    return cards_container
