@@ -1,6 +1,8 @@
 """Window shown when the option "reddit" is choosen in menu.py"""
 import PySimpleGUI as sg
 
+from src.windows import menu
+
 from src.globals import keys, paths, colors
 from src.globals.texts import menu_texts, lpt_texts, st_texts
 
@@ -8,22 +10,7 @@ from src.widgets import titlebar, heading, card
 
 
 def build():
-    ttitlebar = titlebar.build()
-    hheading = heading.build(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
-    cards = build_card_section()
-
-    window = sg.Window(
-        title='',
-        layout=[
-            [ttitlebar],
-            [hheading],
-            [cards]
-        ],
-        no_titlebar=True,
-        keep_on_top=True
-    )
-
-    return window
+    return menu.build(build_card_section(), True)
 
 
 def build_card_section():

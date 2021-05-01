@@ -1,4 +1,4 @@
-from src.windows import menu
+from src.windows import start_menu
 from src.globals import keys
 
 from src.components import popup
@@ -14,7 +14,7 @@ def start():
     
     
 def loop():
-    window = menu.build()
+    window = start_menu.build()
     
     while True:
         event, values = window.read()
