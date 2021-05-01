@@ -3,15 +3,14 @@ from src.globals import keys, mappers
 
 
 def handle_popup(key):
-    event, values = popup.pop(*mappers.POPUP_PARAMETERS[key])
+    """Opens a popup based on a key and operates with results from it."""
+    event, _values = popup.pop(*mappers.POPUP_PARAMETERS[key])
 
-    if event in (keys.RETURN_EVENT, keys.EXIT_EVENT):
-        return event
-
-    # the popup was for reddit, we need to decode
-    # the value returned from the combobox and
-    # show another popup
-    if values:
-        event = handle_popup(mappers.TEXT_TO_KEY[values[1]])
+    # the user didn't wanted to make the analysis
+    if event == keys.RETURN_EVENT:
+        return
+            
+    # the user picked 'analyse'
+    handle_analysis(event)
 
     return event

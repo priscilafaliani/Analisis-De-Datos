@@ -29,16 +29,9 @@ def loop():
         if event == keys.REDDIT_KEY:
             menu_reddit.start()
         else:
-            # show the explanation popup
-            dataset_key = handle_popup(event)
+            # the others don't show a menu
+            handle_popup(event)
             
-            if dataset_key == keys.EXIT_EVENT:
-                break
-            
-            # if the user selected 'analyse' then, make the analysis
-            if dataset_key not in (keys.RETURN_EVENT, keys.EXIT_EVENT):
-                handle_analysis(dataset_key)
-        
         window.un_hide()
         
         

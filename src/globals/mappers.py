@@ -50,16 +50,6 @@ POPUP_PARAMETERS = {
 }
 
 
-# Used in handlers/popups to decode values in the case
-# where a popup has a combobox.
-# The values returned by the combobox are the titles
-# of the other popup which has to be opened.
-TEXT_TO_KEY = {
-    st_texts.ST_CARD_TITLE: keys.ST_KEY,
-    lpt_texts.LPT_CARD_TITLE: keys.LPT_KEY
-}
-
-
 # Used in handlers/analysis to call the correct analysis function
 # The 1st element in the tuple is the function and
 # and the 2nd is the parameter needed.

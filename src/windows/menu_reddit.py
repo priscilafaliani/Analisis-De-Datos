@@ -10,7 +10,7 @@ from src.widgets import titlebar, heading, card
 
 
 def build():
-    return menu.build(build_card_section(), True)
+    return menu.build(build_card_section(), 'VOLVER ATRÁS', keys.RETURN_EVENT, (50, 2))
 
 
 def build_card_section():

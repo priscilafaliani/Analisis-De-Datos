@@ -10,7 +10,7 @@ from src.widgets import card
 
 
 def build():
-    return menu.build(build_card_section(), False)
+    return menu.build(build_card_section(), 'SALIR', keys.EXIT_EVENT, (50, 2))
 
 
 def build_card_section():

@@ -5,14 +5,14 @@ import src.globals.mappers as m
 def handle_analysis(key):
     """Executes an analysis in a dataset.
     
-        The dataset and the analysis to make is mapped
-        in another file, to the dataset key received.
+        The dataset and the analysis to make are mapped
+        in another file, to the key received.
 
         The mapping returns the function to execute and
         the paremeters it needs.
 
         Finally, writes the results to a json file with
-        a name '<key>_analysis.json'
+        name '<key>_analysis.json'
     """
     func, params = m.ANALYSIS_FUNCTIONS[key]
     results = func(params)
