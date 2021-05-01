@@ -3,37 +3,70 @@
     Watch the comments in each one to see when they are used.
     They basically help reducing code repetition.
 """
-import src.globals.keys as k
-import src.globals.paths as p
-import src.globals.texts.hw_texts as hw_texts
-import src.globals.texts.gs_texts as gs_texts
-import src.globals.texts.st_texts as st_texts
-import src.globals.texts.lpt_texts as lpt_texts
-import src.globals.texts.reddit_texts as reddit_texts
+
+from src.globals import keys, paths
+from src.globals.texts import hw_texts, gs_texts
+from src.globals.texts import reddit_texts, st_texts, lpt_texts
 
 from src.handlers import reddit, hello_world, game_sales
 
 
-# used in handlers/popups when handling a popup
+# These are the parameters sent to create a popup
+# when a button in a card, with one of these keys, is
+# pressed.
 POPUP_PARAMETERS = {
-    k.REDDIT_KEY: [k.REDDIT_KEY, reddit_texts.REDDIT_CARD_TITLE, reddit_texts.REDDIT_CARD_SUBTITLE, reddit_texts.REDDIT_CONTENT, st_texts.ST_CARD_TITLE, lpt_texts.LPT_CARD_TITLE],
-    k.ST_KEY: [k.ST_KEY, st_texts.ST_CARD_TITLE, st_texts.ST_CARD_SUBTITLE, st_texts.ST_CONTENT],
-    k.LPT_KEY: [k.LPT_KEY, lpt_texts.LPT_CARD_TITLE, lpt_texts.LPT_CARD_SUBTITLE, lpt_texts.LPT_CONTENT],
-    k.HW_KEY: [k.HW_KEY, hw_texts.HW_CARD_TITLE, hw_texts.HW_CARD_SUBTITLE, hw_texts.HW_CONTENT],
-    k.GS_KEY: [k.GS_KEY, gs_texts.GS_CARD_TITLE, gs_texts.GS_CARD_SUBTITLE, gs_texts.GS_CARD_CONTENT]
+    keys.REDDIT_KEY: [
+        keys.REDDIT_KEY, 
+        reddit_texts.REDDIT_CARD_TITLE, 
+        reddit_texts.REDDIT_CARD_SUBTITLE, 
+        reddit_texts.REDDIT_CONTENT, 
+        st_texts.ST_CARD_TITLE, 
+        lpt_texts.LPT_CARD_TITLE
+    ],
+    keys.ST_KEY: [
+        keys.ST_KEY, 
+        st_texts.ST_CARD_TITLE, 
+        st_texts.ST_CARD_SUBTITLE, 
+        st_texts.ST_CONTENT
+    ],
+    keys.LPT_KEY: [
+        keys.LPT_KEY, 
+        lpt_texts.LPT_CARD_TITLE,
+        lpt_texts.LPT_CARD_SUBTITLE, 
+        lpt_texts.LPT_CONTENT
+    ],
+    keys.HW_KEY: [
+        keys.HW_KEY, 
+        hw_texts.HW_CARD_TITLE, 
+        hw_texts.HW_CARD_SUBTITLE, 
+        hw_texts.HW_CONTENT
+    ],
+    keys.GS_KEY: [
+        keys.GS_KEY, 
+        gs_texts.GS_CARD_TITLE, 
+        gs_texts.GS_CARD_SUBTITLE, 
+        gs_texts.GS_CARD_CONTENT
+    ]
 }
 
-# used in handlers/popups to decode values returned by the combobox.
-# they're only needed when the selected card was 'reddit'
+
+# Used in handlers/popups to decode values in the case
+# where a popup has a combobox.
+# The values returned by the combobox are the titles
+# of the other popup which has to be opened.
 TEXT_TO_KEY = {
-    st_texts.ST_CARD_TITLE: k.ST_KEY,
-    lpt_texts.LPT_CARD_TITLE: k.LPT_KEY
+    st_texts.ST_CARD_TITLE: keys.ST_KEY,
+    lpt_texts.LPT_CARD_TITLE: keys.LPT_KEY
 }
 
-# used in handlers/analysis to call the correct analysis method
+
+# Used in handlers/analysis to call the correct analysis function
+# The 1st element in the tuple is the function and
+# and the 2nd is the parameter needed.
+# In this case: the path of the dataset to analyse.
 ANALYSIS_FUNCTIONS = {
-    k.ST_KEY: (reddit.analyse, p.ST_PATH),
-    k.LPT_KEY: (reddit.analyse, p.LPT_PATH),
-    k.HW_KEY: (hello_world.analyse, p.HW_PATH),
-    k.GS_KEY: (game_sales.analyse, p.GS_PATH)
+    keys.ST_KEY: (reddit.analyse, paths.ST_PATH),
+    keys.LPT_KEY: (reddit.analyse, paths.LPT_PATH),
+    keys.HW_KEY: (hello_world.analyse, paths.HW_PATH),
+    keys.GS_KEY: (game_sales.analyse, paths.GS_PATH)
 }

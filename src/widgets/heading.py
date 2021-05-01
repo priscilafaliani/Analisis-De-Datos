@@ -1,15 +1,16 @@
 import PySimpleGUI as sg
-import src.globals.color_palette as c
+
+from src.globals import colors
 
 HEADING_TITLE_FONT = ('times', 30, 'bold')
 HEADING_SUBTITLE_FONT = ('courier', 15)
 
-def heading(title, subtitle=''):
+def build(title, subtitle=''):
     """Heading with a title & maybe a subtitle"""
     title = sg.Text(
         text=title,
-        background_color=c.DARK_GRAY,
-        text_color=c.WHITE,
+        background_color=colors.DARK_GRAY,
+        text_color=colors.WHITE,
         justification='c',
         grab=True,
         font=HEADING_TITLE_FONT
@@ -17,8 +18,8 @@ def heading(title, subtitle=''):
 
     subtitle = sg.Text(
         text=subtitle,
-        background_color=c.DARK_GRAY,
-        text_color=c.WHITE,
+        background_color=colors.DARK_GRAY,
+        text_color=colors.WHITE,
         justification='c',
         grab=True,
         font=HEADING_SUBTITLE_FONT
@@ -26,7 +27,7 @@ def heading(title, subtitle=''):
 
     container = sg.Column(
         layout=[[title], [subtitle]],
-        background_color=c.DARK_GRAY,
+        background_color=colors.DARK_GRAY,
         expand_x=True,
         element_justification='c',
         vertical_alignment='c',

@@ -1,6 +1,5 @@
 import csv
 import collections
-import src.globals as g
 
 
 TITLE_COLUMN_INDEX = 2

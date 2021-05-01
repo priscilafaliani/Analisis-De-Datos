@@ -1,11 +1,9 @@
 import PySimpleGUI as sg
 
-import src.globals.paths as p
-import src.globals.texts.general as g
-import src.globals.keys as k
-import src.globals.color_palette as c
+from src.globals.texts import general
+from src.globals import paths, keys, colors
 
-from src.widgets.titlebar import titlebar
+from src.widgets import titlebar
 
 
 # space between icon and top border
@@ -29,26 +27,26 @@ def build(key, title, subtitle, content, choices):
 
         OPTIONAL: a list of choices to show.
     """
-    ttitlebar = titlebar()
+    ttitlebar = titlebar.build()
 
     icon = sg.Image(
-        filename=p.POPUP_ICON,
-        background_color=c.WHITE,
+        filename=paths.POPUP_ICON,
+        background_color=colors.WHITE,
         pad=IMAGE_TOP_SEP
     )
 
     title = sg.Text(
         text=title,
-        background_color=c.WHITE,
-        text_color=c.VIOLET,
+        background_color=colors.WHITE,
+        text_color=colors.VIOLET,
         justification='c',
         font=CARD_TITLE_FONT
     )
 
     subtitle = sg.Text(
         text=subtitle,
-        background_color=c.WHITE,
-        text_color=c.BLACK,
+        background_color=colors.WHITE,
+        text_color=colors.BLACK,
         justification='c',
         font=CARD_SUBTITLE_FONT,
         size=SUBTITLE_SIZE
@@ -56,8 +54,8 @@ def build(key, title, subtitle, content, choices):
 
     content = sg.Text(
         text=content,
-        background_color=c.WHITE,
-        text_color=c.BLACK,
+        background_color=colors.WHITE,
+        text_color=colors.BLACK,
         justification='c',
         size=CONTENT_SIZE,
         font=CONTENT_FONT,
@@ -71,7 +69,7 @@ def build(key, title, subtitle, content, choices):
             [subtitle],
             [content]
         ],
-        background_color=c.WHITE,
+        background_color=colors.WHITE,
         element_justification='c',
         vertical_alignment='c',
         pad=(10, 10)
@@ -79,14 +77,14 @@ def build(key, title, subtitle, content, choices):
 
     if choices:
         popup = add_choices(container, choices)
-        continue_button_text = g.POPUP_BUTTON1_TEXT2
+        continue_button_text = general.POPUP_BUTTON1_TEXT2
     else:
-        continue_button_text = g.POPUP_BUTTON1_TEXT
+        continue_button_text = general.POPUP_BUTTON1_TEXT
 
     continue_button = sg.Button(
         button_text=continue_button_text,
-        button_color=(c.WHITE, c.DARK_GRAY),
-        mouseover_colors=(c.WHITE, c.ORANGE),
+        button_color=(colors.WHITE, colors.DARK_GRAY),
+        mouseover_colors=(colors.WHITE, colors.ORANGE),
         key=key,
         size=BUTTON_SIZE,
         pad=BUTTON_BOTTOM_SEP,
@@ -94,10 +92,10 @@ def build(key, title, subtitle, content, choices):
     )
 
     cancel_button = sg.Button(
-        button_text=g.POPUP_BUTTON2_TEXT,
-        button_color=(c.WHITE, c.DARK_GRAY),
-        mouseover_colors=(c.WHITE, c.ORANGE),
-        key=k.RETURN_EVENT,
+        button_text=general.POPUP_BUTTON2_TEXT,
+        button_color=(colors.WHITE, colors.DARK_GRAY),
+        mouseover_colors=(colors.WHITE, colors.ORANGE),
+        key=keys.RETURN_EVENT,
         size=BUTTON_SIZE,
         pad=BUTTON_BOTTOM_SEP,
         font=CARD_BUTTON_FONT
@@ -126,8 +124,8 @@ def add_choices(popup, choices):
         values=choices,
         default_value=choices[0],
         size=(35, None),
-        background_color=c.WHITE,
-        text_color=c.BLACK,
+        background_color=colors.WHITE,
+        text_color=colors.BLACK,
         pad=(20, 20)
     )
 

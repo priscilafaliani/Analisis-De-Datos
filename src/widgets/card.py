@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 
-import src.globals.color_palette as c
-import src.globals.texts.general as g
+from src.globals import colors
+from src.globals.texts import general
 
 
 # space between icon and top border
@@ -16,34 +16,34 @@ CARD_TITLE_FONT = ('times', '20')
 CARD_SUBTITLE_FONT = ('courier', 12, 'bold')
 CARD_BUTTON_FONT = ('times', 15)
 
-def card(icon_path, title, subtitle, key):
+def build(icon_path, title, subtitle, key):
     icon = sg.Image(
         filename=icon_path,
-        background_color=c.WHITE,
+        background_color=colors.WHITE,
         pad=IMAGE_TOP_SEP
     )
 
     title = sg.Text(
         text=title,
-        background_color=c.WHITE,
-        text_color=c.ORANGE,
+        background_color=colors.WHITE,
+        text_color=colors.ORANGE,
         justification='c',
         font=CARD_TITLE_FONT
     )
 
     subtitle = sg.Text(
         text=subtitle,
-        background_color=c.WHITE,
-        text_color=c.BLACK,
+        background_color=colors.WHITE,
+        text_color=colors.BLACK,
         justification='c',
         font=CARD_SUBTITLE_FONT,
         size=SUBTITLE_SIZE
     )
 
     button = sg.Button(
-        button_text=g.CARD_BUTTON_TEXT,
-        button_color=(c.WHITE, c.LIGHT_GRAY),
-        mouseover_colors=(c.WHITE, c.ORANGE),
+        button_text=general.CARD_BUTTON_TEXT,
+        button_color=(colors.WHITE, colors.LIGHT_GRAY),
+        mouseover_colors=(colors.WHITE, colors.ORANGE),
         key=key,
         font=CARD_BUTTON_FONT,
         size=BUTTON_SIZE,
@@ -57,7 +57,7 @@ def card(icon_path, title, subtitle, key):
             [subtitle],
             [button]
         ],
-        background_color=c.WHITE,
+        background_color=colors.WHITE,
         element_justification='c',
         vertical_alignment='c',
         pad=(10, 10)

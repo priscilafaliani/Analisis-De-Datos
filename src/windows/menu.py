@@ -1,48 +1,41 @@
 import PySimpleGUI as sg
 
-import src.globals.keys as k
-import src.globals.paths as p
-import src.globals.color_palette as c
-import src.globals.texts.hw_texts as hw_texts
-import src.globals.texts.gs_texts as gs_texts
-import src.globals.texts.menu_texts as menu_texts
-import src.globals.texts.reddit_texts as reddit_texts
+from src.globals import keys, paths, colors
+from src.globals.texts import menu_texts, reddit_texts, hw_texts, gs_texts
 
-from src.widgets.titlebar import titlebar
-from src.widgets.heading import heading
-from src.widgets.card import card
+from src.widgets import titlebar, heading, card
 
 
 def build():
-    ttitlebar = titlebar()
-    hheading = heading(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
+    ttitlebar = titlebar.build()
+    hheading = heading.build(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
 
-    reddit = card(
-        p.REDDIT_ICON,
+    reddit = card.build(
+        paths.REDDIT_ICON,
         reddit_texts.REDDIT_CARD_TITLE,
         reddit_texts.REDDIT_CARD_SUBTITLE,
-        k.REDDIT_KEY
+        keys.REDDIT_KEY
     )
     
-    hello_world = card(
-        p.HW_ICON,
+    hello_world = card.build(
+        paths.HW_ICON,
         hw_texts.HW_CARD_TITLE,
         hw_texts.HW_CARD_SUBTITLE,
-        k.HW_KEY
+        keys.HW_KEY
     )
     
-    games_sales = card(
-        p.GAMES_ICON,
+    games_sales = card.build(
+        paths.GAMES_ICON,
         gs_texts.GS_CARD_TITLE,
         gs_texts.GS_CARD_SUBTITLE,
-        k.GS_KEY    
+        keys.GS_KEY    
     )
     
     cards_container = sg.Column(
         layout=[
             [reddit, hello_world, games_sales]
         ],
-        background_color=c.BACKGROUND,
+        background_color=colors.BACKGROUND,
         element_justification='c',
         vertical_alignment='c'
     )

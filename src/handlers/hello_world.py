@@ -1,6 +1,4 @@
 import csv
-import os.path
-import collections
 
 EXT_INDEX = 2
 NAME_INDEX = 1

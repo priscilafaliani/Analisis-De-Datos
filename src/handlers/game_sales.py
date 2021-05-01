@@ -1,5 +1,5 @@
 import csv
-import os.path
+
 
 NAME_INDEX = 1
 YEAR_INDEX = 3
