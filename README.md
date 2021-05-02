@@ -11,7 +11,10 @@ Esta es la resolución a una actividad que nos propusieron en la clase teória d
 ## Imágenes
 
 #### Pantalla inicial
-![Initial Screen](img/image_2021-04-30_18-02-17.png)
+![Ventana inicial](img\Pantalla-Inicial.png)
+
+### Pantalla 'Reddit'
+![Ventana Reddit](img\Pantalla-Reddit.png)
 
 
 ## Explicación
@@ -29,14 +32,14 @@ Utilizo 4 datasets.
 
 Este análisis es medio tonto, pero quería dejarlo porque obtuve los datos yo y porque es mi aplicación y hago lo que quiero.
 
-- El segundo es un dataset acerca de las maneras que se escribe el programa 'hello world' en diferentes lenguajes. El análisis obtiene algunos con extensiones arbitrarias.
+- El segundo es un dataset sobre composiciones de varios compositores, con algunos datos acerca de cada una. El análisis obtiene las obras de Bach más cortas.
 
 - El tercero es sobre ventas de juegos. El análisis consiste en obtener aquellos que salieron antes del 2000 y los 10 que más ventas tuvieron.
 
 ## Atribución
 - No encontré información acerca de la licencia y el uso de los datos de Reddit.
-- El dataset de ventas de juegos no especifica ninguna licencia.
-- El dataset de lenguajes de programación tiene licencia: [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/)
+- El dataset de ventas de [juegos](https://www.kaggle.com/gregorut/videogamesales) no especifica ninguna licencia.
+- El dataset de [música](https://www.kaggle.com/imsparsh/musicnet-dataset?select=musicnet_metadata.csv) tiene licencia: [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 Los íconos que utilicé son hechos por [Freepik.](https://www.flaticon.com/authors/freepik)
 
