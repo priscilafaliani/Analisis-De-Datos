@@ -11,10 +11,10 @@ Esta es la resolución a una actividad que nos propusieron en la clase teória d
 ## Imágenes
 
 #### Pantalla inicial
-![Ventana inicial](img\Pantalla-Inicial.png)
+![Ventana inicial](img/Pantalla-Inicial.png)
 
 ### Pantalla 'Reddit'
-![Ventana Reddit](img\Pantalla-Reddit.png)
+![Ventana Reddit](img/Pantalla-Reddit.png)
 
 
 ## Explicación
