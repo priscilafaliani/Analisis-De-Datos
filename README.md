@@ -43,7 +43,7 @@ py run.py
 ```
 
 ## Explicación
-La trabajo consistía en:
+El trabajo consistía en:
 - Crear una GUI que nos permita elegir entre dos datasets para analizar.
 - La GUI debía estar hecha en PySimpleGUI
 - Guardar el resultado de los análisis en un archivo JSON.
