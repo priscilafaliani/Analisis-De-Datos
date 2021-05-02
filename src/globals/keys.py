@@ -13,7 +13,7 @@ ST_KEY = '-ST-'
 LPT_KEY = '-LPT-'
 
 # ------ HELLO WORLD IN PROGRAMMING LANGUAGES ------
-HW_KEY = '-HW-'
+MUSIC_KEY = '-MUSIC-'
 
 # ------ GAMES SALES ------
 GS_KEY = '-GS-'

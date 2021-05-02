@@ -5,10 +5,10 @@
 """
 
 from src.globals import keys, paths
-from src.globals.texts import hw_texts, gs_texts
+from src.globals.texts import music_texts, gs_texts
 from src.globals.texts import reddit_texts, st_texts, lpt_texts
 
-from src.handlers import reddit, hello_world, game_sales
+from src.handlers import reddit, music, game_sales
 
 
 # These are the parameters sent to create a popup
@@ -35,11 +35,11 @@ POPUP_PARAMETERS = {
         lpt_texts.LPT_CARD_SUBTITLE, 
         lpt_texts.LPT_CONTENT
     ],
-    keys.HW_KEY: [
-        keys.HW_KEY, 
-        hw_texts.HW_CARD_TITLE, 
-        hw_texts.HW_CARD_SUBTITLE, 
-        hw_texts.HW_CONTENT
+    keys.MUSIC_KEY: [
+        keys.MUSIC_KEY, 
+        music_texts.MUSIC_CARD_TITLE, 
+        music_texts.MUSIC_CARD_SUBTITLE, 
+        music_texts.MUSIC_CONTENT
     ],
     keys.GS_KEY: [
         keys.GS_KEY, 
@@ -57,6 +57,6 @@ POPUP_PARAMETERS = {
 ANALYSIS_FUNCTIONS = {
     keys.ST_KEY: (reddit.analyse, paths.ST_PATH),
     keys.LPT_KEY: (reddit.analyse, paths.LPT_PATH),
-    keys.HW_KEY: (hello_world.analyse, paths.HW_PATH),
+    keys.MUSIC_KEY: (music.analyse, paths.MUSIC_PATH),
     keys.GS_KEY: (game_sales.analyse, paths.GS_PATH)
 }

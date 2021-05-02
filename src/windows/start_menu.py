@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 from src.windows import menu
 
 from src.globals import keys, paths, colors
-from src.globals.texts import reddit_texts, hw_texts, gs_texts
+from src.globals.texts import reddit_texts, music_texts, gs_texts
 
 from src.widgets import card
 
@@ -22,11 +22,11 @@ def build_card_section():
         keys.REDDIT_KEY
     )
     
-    hello_world = card.build(
-        paths.HW_ICON,
-        hw_texts.HW_CARD_TITLE,
-        hw_texts.HW_CARD_SUBTITLE,
-        keys.HW_KEY
+    music = card.build(
+        paths.MUSIC_ICON,
+        music_texts.MUSIC_CARD_TITLE,
+        music_texts.MUSIC_CARD_SUBTITLE,
+        keys.MUSIC_KEY
     )
     
     games_sales = card.build(
@@ -38,7 +38,7 @@ def build_card_section():
     
     cards_container = sg.Column(
         layout=[
-            [reddit, hello_world, games_sales]
+            [reddit, music, games_sales]
         ],
         background_color=colors.BACKGROUND,
         element_justification='c',
