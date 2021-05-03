@@ -15,9 +15,6 @@ Esta es la resolución a una actividad que nos propusieron en la clase teória d
 #### Pantalla inicial
 ![Ventana inicial](img/Pantalla-Inicial.png)
 
-### Pantalla 'Reddit'
-![Ventana Reddit](img/Pantalla-Reddit.png)
-
 ## Instalación
 ### Instalar los requerimientos
 
