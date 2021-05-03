@@ -1,7 +1,6 @@
 - [Actividad Teórica](#actividad-teórica)
   - [Imágenes](#imágenes)
       - [Pantalla inicial](#pantalla-inicial)
-      - [Pantalla reddit](#pantalla-reddit)
   - [Instalación](#instalación)
   - [Explicación](#explicación)
   - [Mi propuesta](#mi-propuesta)
