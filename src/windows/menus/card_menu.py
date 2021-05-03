@@ -13,18 +13,20 @@
 import PySimpleGUI as sg
 
 from src.globals import colors
-from src.globals.texts import menu_texts
 from src.widgets import titlebar, heading, button, fillers
 
 
 # constants for the menus
 BUTTON_FONT = ('times', 15)
 
+MAIN_WINDOW_TITLE = 'ANÁLISIS DE DATOS'
+MAIN_WINDOW_SUBTITLE = 'SELECCIONE UN SET DE DATOS'
+
 
 def build(cards, exit_button_text, key, button_size):
     """Builds a menu with the given cards and a button."""
     ttitlebar = titlebar.build()
-    hheading = heading.build(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
+    hheading = heading.build(MAIN_WINDOW_TITLE, MAIN_WINDOW_SUBTITLE)
     exit_button = button.build(exit_button_text, key, BUTTON_FONT, button_size)
 
     # adds space between button and bottom border

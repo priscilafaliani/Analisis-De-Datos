@@ -21,5 +21,3 @@ GS_KEY = '-GS-'
 # events are also keys in pysimplegui
 EXIT_EVENT = '-EXIT-'
 RETURN_EVENT = '-VOLVER ATRÁS-'
-ANALYSE_EVENT = '-ANALIZAR-'
-SEE_MORE_EVENT = '-VER MÁS-'

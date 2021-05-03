@@ -1,3 +1,4 @@
+"""These are the texts shown in card_menu's and card_popup's"""
 # GAME SALES
 GS_CARD_TITLE = 'JUEGOS'
 GS_CARD_SUBTITLE = 'COLECCIÓN DE JUEGOS Y SUS\nVENTAS EN DIFERENTES PAÍSES'

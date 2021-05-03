@@ -24,7 +24,7 @@ def loop():
         window.hide()
     
         # tell the user about the option choosen
-        event, _values = card_popup.pop(*mappers.POPUP_PARAMETERS[event])
+        event, _values = card_popup.start(*mappers.POPUP_PARAMETERS[event])
 
         # the user didn't wanted to make the analysis
         if event != keys.RETURN_EVENT:

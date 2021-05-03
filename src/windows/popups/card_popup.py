@@ -10,14 +10,15 @@
 """
 import PySimpleGUI as sg
 
-from src.globals.texts import general
 from src.globals import paths, keys, colors
-
 from src.widgets import titlebar, fillers, button
 
 
 # window constants
 POPUP_BUTTON_SIZE = (35, 2)
+POPUP_BUTTON1_TEXT = 'ANALIZAR'
+POPUP_BUTTON2_TEXT = 'VOLVER ATRÁS'
+
 # defines the width of the card 
 SUBTITLE_SIZE = (50, None)
 
@@ -117,7 +118,7 @@ def build_buttons_section(key):
     """Returns a container with the two buttons in a popup"""
     
     analyse = button.build(
-        general.POPUP_BUTTON1_TEXT,
+        POPUP_BUTTON1_TEXT,
         key,
         POPUP_BUTTON_FONT,
         POPUP_BUTTON_SIZE
@@ -127,7 +128,7 @@ def build_buttons_section(key):
     BUTTON_BOTTOM_SEP = fillers.horizontal_filler(1, colors.WHITE)
     
     cancel = button.build(
-        general.POPUP_BUTTON2_TEXT,
+        POPUP_BUTTON2_TEXT,
         keys.RETURN_EVENT,
         POPUP_BUTTON_FONT,
         POPUP_BUTTON_SIZE

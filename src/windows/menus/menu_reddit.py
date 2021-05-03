@@ -7,7 +7,7 @@ import PySimpleGUI as sg
 from src.windows.menus import card_menu
 
 from src.globals import keys, paths, colors
-from src.globals.texts import datasets_descriptions_texts
+from src.globals import datasets_descriptions_texts
 
 from src.widgets import titlebar, heading, card
 

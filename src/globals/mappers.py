@@ -5,7 +5,7 @@
 """
 
 from src.globals import keys, paths
-from src.globals.texts import datasets_descriptions_texts
+from src.globals import datasets_descriptions_texts
 
 from src.handlers import lifeprotips, music, game_sales, programmer_humor
 

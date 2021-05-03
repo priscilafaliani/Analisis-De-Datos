@@ -11,7 +11,7 @@ from src.widgets import card
 from src.globals import keys, paths
 
 # the texts for the cards
-from src.globals.texts import datasets_descriptions_texts
+from src.globals import datasets_descriptions_texts
 
 
 # constants for this menu

@@ -2,12 +2,11 @@
 import PySimpleGUI as sg
 
 from src.globals import colors
-from src.globals.texts import general
-
 from src.widgets import fillers, button
 
 
 CARD_BUTTON_SIZE = (25, 2)
+CARD_BUTTON_TEXT = 'LEER MÁS'
 # defines the width of the card
 SUBTITLE_SIZE = (35, None)
 
@@ -16,6 +15,7 @@ CARD_SUBTITLE_FONT = ('courier', 12, 'bold')
 CARD_BUTTON_FONT = ('times', 15)
 
 CARD_SPACE_AROUND = (10, 10)
+
 
 def build(icon_path, title, subtitle, key):
     # space between icon and top border
@@ -32,7 +32,7 @@ def build(icon_path, title, subtitle, key):
     CONTENT_SEP = fillers.horizontal_filler(2, colors.WHITE)
     
     read_more = button.build(
-        general.CARD_BUTTON_TEXT,
+        CARD_BUTTON_TEXT,
         key,
         CARD_BUTTON_FONT,
         CARD_BUTTON_SIZE

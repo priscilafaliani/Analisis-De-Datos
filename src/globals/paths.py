@@ -1,6 +1,6 @@
 """Contains all the paths used trought the app."""
-
 import os.path
+
 
 # ------ ICONS ------
 ICONS_PATH = os.path.join('resources', 'icons')
