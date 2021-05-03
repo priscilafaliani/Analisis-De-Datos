@@ -2,6 +2,7 @@
   - [Imágenes](#imágenes)
       - [Pantalla inicial](#pantalla-inicial)
       - [Pantalla reddit](#pantalla-reddit)
+  - [Instalación](#instalación)
   - [Explicación](#explicación)
   - [Mi propuesta](#mi-propuesta)
   - [Atribución](#atribución)
@@ -17,9 +18,32 @@ Esta es la resolución a una actividad que nos propusieron en la clase teória d
 ### Pantalla 'Reddit'
 ![Ventana Reddit](img/Pantalla-Reddit.png)
 
+## Instalación
+### Instalar los requerimientos
+
+#### Unix/macOS
+```
+python -m pip install -r requirements.txt
+```
+
+#### Windows
+```
+py -m pip install -r requirements.txt
+```
+### Ejecutar
+
+#### Unix/maxOS
+```
+python run.py
+```
+
+#### Windows
+```
+py run.py
+```
 
 ## Explicación
-La trabajo consistía en:
+El trabajo consistía en:
 - Crear una GUI que nos permita elegir entre dos datasets para analizar.
 - La GUI debía estar hecha en PySimpleGUI
 - Guardar el resultado de los análisis en un archivo JSON.
