@@ -7,7 +7,7 @@ import PySimpleGUI as sg
 from src.windows.menus import card_menu
 
 from src.globals import keys, paths, colors
-from src.globals.texts import menu_texts, lpt_texts, ph_texts
+from src.globals.texts import datasets_descriptions_texts
 
 from src.widgets import titlebar, heading, card
 
@@ -31,15 +31,15 @@ def build_card_section():
     """Returns a container with a row of cards for the menu."""
     lpt = card.build(
         paths.LTP_ICON,
-        lpt_texts.LPT_CARD_TITLE,
-        lpt_texts.LPT_CARD_SUBTITLE,
+        datasets_descriptions_texts.LPT_CARD_TITLE,
+        datasets_descriptions_texts.LPT_CARD_SUBTITLE,
         keys.LPT_KEY
     )
     
     ph = card.build(
         paths.PH_ICON,
-        ph_texts.PH_CARD_TITLE,
-        ph_texts.PH_CARD_SUBTITLE,
+        datasets_descriptions_texts.PH_CARD_TITLE,
+        datasets_descriptions_texts.PH_CARD_SUBTITLE,
         keys.PH_KEY
     )
 

@@ -1,13 +1,28 @@
 import csv
 
+from src.globals.paths import MUSIC_PATH
+from src.handlers.writer import write_to_json
+
 COMPOSER_INDEX = 1
 COMPOSITION_INDEX = 2
 MOVEMENT_INDEX = 3
 SECONDS_INDEX = 8
 
-def analyse(filepath):
+
+def make_analysis(output_filepath):
+    """Does all the work needed to complete the analysis.
+    
+        In this case, it makes one thing:
+            - Writes to a json file.
+
+    """
+    analysis_results = analyse()
+    write_to_json(analysis_results, output_filepath)
+
+
+def analyse():
     """Obtains the top 10 shortest Beethoven compositions"""
-    with open(file=filepath, mode='r', encoding='utf-8') as f:
+    with open(file=MUSIC_PATH, mode='r', encoding='utf-8') as f:
         reader = csv.reader(f)
 
         print(next(reader))

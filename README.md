@@ -53,9 +53,10 @@ El trabajo consistía en:
 ## Mi propuesta
 Utilizo 4 datasets.
 
-- Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. El análisis obtiene los mejores 10 de cada uno.
-
-Este análisis es medio tonto, pero quería dejarlo porque obtuve los datos yo y porque es mi aplicación y hago lo que quiero.
+- Los primeros dos, son de Reddit. Fueron obtenidos por mí luego de haber creado un script, también en Python, para recolectar los datos. Son los 1000 top posts de dos subredddits. 
+  - El primero es sobre el subreddit 'ProgrammerHumor'. Obtiene los memes/imágenes en el top 10.
+  - El segundo es sobre el subreddit 'life pro tips' y obtiene los mejores 10 con el flair 'Computers'. 
+(Bastante tonto, pero me hacia ilusión, ok)
 
 - El segundo es un dataset sobre composiciones de varios compositores, con algunos datos acerca de cada una. El análisis obtiene las obras de Bach más cortas.
 

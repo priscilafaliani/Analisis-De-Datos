@@ -1,3 +1,0 @@
-MUSIC_CARD_TITLE = 'MÚSICA'
-MUSIC_CARD_SUBTITLE = 'UNA COLECCIÓN DE OBRAS DE MÚSICA\nCLÁSICA Y SUS COMPOSITORES'
-MUSIC_CONTENT = '¿Cuáles serán los 10 movimientos de Bach\nque duran menos tiempo?'

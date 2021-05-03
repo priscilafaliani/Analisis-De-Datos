@@ -2,5 +2,5 @@ from src.windows.popups import card_popup
 
 
 def pop(key, title, subtitle, content):
-    window = card_popup.build(key, title, subtitle, content)
-    return window.read(close=True)
+    """Show the popup and return the values read."""
+    return card_popup.build(key, title, subtitle, content).read(close=True)

@@ -1,40 +1,36 @@
-import os
 import os.path
-import json
-import src.globals.mappers as m
 
-from src.components import build_window, completed
+from src.globals import mappers
+from src.components import filebrowse_popup, completed_popup
+
 
 def handle_analysis(key):
-    """Executes an analysis in a dataset.
+    """Manages all the functions calls to make an analysis.
     
         The dataset and the analysis to make are mapped
         in another file, to the key received.
 
-        The mapping returns the function to execute and
-        the paremeters it needs.
+        The mapping returns the function to execute.
 
-        Finally, writes the results to a json file with
-        name '<key>_analysis.json'
+        This handler gives the function the filename
+        where to save the analysis.
     """
-    func, params = m.ANALYSIS_FUNCTIONS[key]
+    make_analysis = mappers.ANALYSIS_FUNCTIONS[key]
+    filepath = get_filepath_to_write(key)
+    make_analysis(filepath)
+    completed_popup.start(filepath)
 
-    # get filepath to save the file
-    filepath = build_window.start()
+
+def get_filepath_to_write(key):
+    """Returns the filepath where the analysis is to be saved."""
+    filepath = filebrowse_popup.start()
+
+    # get the default ouput folder
     if not filepath:
-        filepath = os.getcwd()
-    filepath = os.path.normpath(f'{os.path.join(filepath, key.replace("-", ""))}_analysis.json')
+        filepath = os.path.join(os.getcwd(), 'output')
 
-    # make the analysis
-    results = func(params)
-
-    # write to file
-    write_to_json(results, filepath)
-
-    # show the "completed" message
-    completed.start(filepath)
-
-
-def write_to_json(results, output_filepath):
-    with open(file=output_filepath, mode='w', encoding='utf-8') as f:
-        json.dump(results, f)
+    # join the path with the filename
+    filepath = f'{os.path.join(filepath, key.replace("-", ""))}_analysis'
+    
+    # has to be normalized bc os.getcwd() scares me
+    return os.path.normpath(filepath)

@@ -7,7 +7,7 @@
 REDDIT_KEY = '-R-'
 
 # ------ SHOWERTHOUGHTS ------
-ST_KEY = '-ST-'
+PH_KEY = '-PH-'
 
 # ------- LIFE PRO TIPS ------
 LPT_KEY = '-LPT-'

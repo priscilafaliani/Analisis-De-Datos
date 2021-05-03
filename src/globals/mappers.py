@@ -5,10 +5,9 @@
 """
 
 from src.globals import keys, paths
-from src.globals.texts import music_texts, gs_texts
-from src.globals.texts import reddit_texts, st_texts, lpt_texts
+from src.globals.texts import datasets_descriptions_texts
 
-from src.handlers import reddit, music, game_sales
+from src.handlers import lifeprotips, music, game_sales, programmer_humor
 
 
 # These are the parameters sent to create a popup
@@ -17,35 +16,35 @@ from src.handlers import reddit, music, game_sales
 POPUP_PARAMETERS = {
     keys.REDDIT_KEY: [
         keys.REDDIT_KEY, 
-        reddit_texts.REDDIT_CARD_TITLE, 
-        reddit_texts.REDDIT_CARD_SUBTITLE, 
-        reddit_texts.REDDIT_CONTENT, 
-        st_texts.ST_CARD_TITLE, 
-        lpt_texts.LPT_CARD_TITLE
+        datasets_descriptions_texts.REDDIT_CARD_TITLE, 
+        datasets_descriptions_texts.REDDIT_CARD_SUBTITLE, 
+        datasets_descriptions_texts.REDDIT_CONTENT, 
+        datasets_descriptions_texts.PH_CARD_TITLE, 
+        datasets_descriptions_texts.LPT_CARD_TITLE
     ],
-    keys.ST_KEY: [
-        keys.ST_KEY, 
-        st_texts.ST_CARD_TITLE, 
-        st_texts.ST_CARD_SUBTITLE, 
-        st_texts.ST_CONTENT
+    keys.PH_KEY: [
+        keys.PH_KEY, 
+        datasets_descriptions_texts.PH_CARD_TITLE, 
+        datasets_descriptions_texts.PH_CARD_SUBTITLE, 
+        datasets_descriptions_texts.PH_CONTENT
     ],
     keys.LPT_KEY: [
         keys.LPT_KEY, 
-        lpt_texts.LPT_CARD_TITLE,
-        lpt_texts.LPT_CARD_SUBTITLE, 
-        lpt_texts.LPT_CONTENT
+        datasets_descriptions_texts.LPT_CARD_TITLE,
+        datasets_descriptions_texts.LPT_CARD_SUBTITLE, 
+        datasets_descriptions_texts.LPT_CONTENT
     ],
     keys.MUSIC_KEY: [
         keys.MUSIC_KEY, 
-        music_texts.MUSIC_CARD_TITLE, 
-        music_texts.MUSIC_CARD_SUBTITLE, 
-        music_texts.MUSIC_CONTENT
+        datasets_descriptions_texts.MUSIC_CARD_TITLE, 
+        datasets_descriptions_texts.MUSIC_CARD_SUBTITLE, 
+        datasets_descriptions_texts.MUSIC_CONTENT
     ],
     keys.GS_KEY: [
         keys.GS_KEY, 
-        gs_texts.GS_CARD_TITLE, 
-        gs_texts.GS_CARD_SUBTITLE, 
-        gs_texts.GS_CARD_CONTENT
+        datasets_descriptions_texts.GS_CARD_TITLE, 
+        datasets_descriptions_texts.GS_CARD_SUBTITLE, 
+        datasets_descriptions_texts.GS_CARD_CONTENT
     ]
 }
 
@@ -55,8 +54,8 @@ POPUP_PARAMETERS = {
 # and the 2nd is the parameter needed.
 # In this case: the path of the dataset to analyse.
 ANALYSIS_FUNCTIONS = {
-    keys.ST_KEY: (reddit.analyse, paths.ST_PATH),
-    keys.LPT_KEY: (reddit.analyse, paths.LPT_PATH),
-    keys.MUSIC_KEY: (music.analyse, paths.MUSIC_PATH),
-    keys.GS_KEY: (game_sales.analyse, paths.GS_PATH)
+    keys.PH_KEY: (programmer_humor.make_analysis),
+    keys.LPT_KEY: (lifeprotips.make_analysis),
+    keys.MUSIC_KEY: (music.make_analysis),
+    keys.GS_KEY: (game_sales.make_analysis)
 }

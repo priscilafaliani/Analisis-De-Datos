@@ -1,0 +1,1 @@
+"""The keeper of all the windows of the app."""

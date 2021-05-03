@@ -11,7 +11,7 @@ from src.widgets import card
 from src.globals import keys, paths
 
 # the texts for the cards
-from src.globals.texts import reddit_texts, music_texts, gs_texts
+from src.globals.texts import datasets_descriptions_texts
 
 
 # constants for this menu
@@ -33,22 +33,22 @@ def build_card_section():
     """Builds a row with the cards of reddit, music and games sales."""
     reddit = card.build(
         paths.REDDIT_ICON,
-        reddit_texts.REDDIT_CARD_TITLE,
-        reddit_texts.REDDIT_CARD_SUBTITLE,
+        datasets_descriptions_texts.REDDIT_CARD_TITLE,
+        datasets_descriptions_texts.REDDIT_CARD_SUBTITLE,
         keys.REDDIT_KEY
     )
     
     music = card.build(
         paths.MUSIC_ICON,
-        music_texts.MUSIC_CARD_TITLE,
-        music_texts.MUSIC_CARD_SUBTITLE,
+        datasets_descriptions_texts.MUSIC_CARD_TITLE,
+        datasets_descriptions_texts.MUSIC_CARD_SUBTITLE,
         keys.MUSIC_KEY
     )
     
     games_sales = card.build(
         paths.GAMES_ICON,
-        gs_texts.GS_CARD_TITLE,
-        gs_texts.GS_CARD_SUBTITLE,
+        datasets_descriptions_texts.GS_CARD_TITLE,
+        datasets_descriptions_texts.GS_CARD_SUBTITLE,
         keys.GS_KEY    
     )
     

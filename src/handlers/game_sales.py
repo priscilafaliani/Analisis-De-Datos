@@ -1,14 +1,28 @@
 import csv
 
+from src.globals.paths import GS_PATH
+from src.handlers.writer import write_to_json
 
 NAME_INDEX = 1
 YEAR_INDEX = 3
 GENRE_INDEX = 4
 SALES_INDEX = -1
 
-def analyse(filepath):
+
+def make_analysis(output_filepath):
+    """Does all the work needed to complete the analysis.
+    
+        In this case, it makes one thing:
+            - Writes to a json file.
+
+    """
+    analysis_results = analyse()
+    write_to_json(analysis_results, output_filepath)
+
+
+def analyse():
     """Obtains the top 10 sales games from the 2000 or less."""
-    with open(file=filepath, mode='r', encoding='utf-8') as f:
+    with open(file=GS_PATH, mode='r', encoding='utf-8') as f:
         reader = csv.reader(f)
 
         # Header.
