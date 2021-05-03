@@ -1,3 +1,7 @@
+"""Builds a 'heading'. It's used besides the titlebar widget.
+
+    May have a subtitle. 
+"""
 import PySimpleGUI as sg
 
 from src.globals import colors

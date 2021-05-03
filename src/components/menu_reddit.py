@@ -1,4 +1,4 @@
-from src.windows import menu_reddit
+from src.windows.menus import menu_reddit
 from src.globals import keys
 
 from src.handlers.popups import handle_popup

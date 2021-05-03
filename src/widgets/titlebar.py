@@ -1,3 +1,4 @@
+"""A titlebar, the part supossed to have the exit/minimize buttons."""
 import PySimpleGUI as sg
 
 from src.globals import colors, paths, keys

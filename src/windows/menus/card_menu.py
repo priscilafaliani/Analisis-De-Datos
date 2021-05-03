@@ -1,17 +1,31 @@
-"""Builds a custom cards menu window."""
+"""The base for all the card menus in the app.
+
+    Is a menu used for selecting a dataset,
+    each 'dataset' is represented by a card widget.
+
+    The menu receives an sg.Column object, containing
+    all the cards.
+
+    These menus will all have the same colors & theme.
+    They vary in the heading content, see: src/widgets/heading.py
+    and the cards inside.
+"""
 import PySimpleGUI as sg
 
-from src.globals.texts import menu_texts
 from src.globals import colors
-
+from src.globals.texts import menu_texts
 from src.widgets import titlebar, heading, button, fillers
 
 
-def build(cards, exit_button_text, key, size):
-    """Builds a menu with the given cards and an optional return button."""
+# constants for the menus
+BUTTON_FONT = ('times', 15)
+
+
+def build(cards, exit_button_text, key, button_size):
+    """Builds a menu with the given cards and a button."""
     ttitlebar = titlebar.build()
     hheading = heading.build(menu_texts.MAIN_WINDOW_TITLE, menu_texts.MAIN_WINDOW_SUBTITLE)
-    exit_button = button.build(exit_button_text, key, ('times', 15), size)
+    exit_button = button.build(exit_button_text, key, BUTTON_FONT, button_size)
 
     # adds space between button and bottom border
     bottom_sep = fillers.horizontal_filler(1, colors.BACKGROUND)

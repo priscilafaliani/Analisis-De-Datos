@@ -1,4 +1,4 @@
-from src.windows import card_popup
+from src.windows.popups import card_popup
 
 
 def pop(key, title, subtitle, content):

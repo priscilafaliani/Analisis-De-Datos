@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 
 from src.globals import colors
-from src.components import menu
+from src.components import start_menu
 
 
 def start():
@@ -14,4 +14,4 @@ def start():
         font='helvetica'
     )
 
-    menu.start()
+    start_menu.start()

@@ -1,3 +1,4 @@
+"""Builds a button according to the theme of the app."""
 import PySimpleGUI as sg
 
 from src.globals import colors

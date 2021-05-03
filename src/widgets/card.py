@@ -1,3 +1,4 @@
+"""Builds the type of card used on the menus."""
 import PySimpleGUI as sg
 
 from src.globals import colors
@@ -57,7 +58,7 @@ def build(icon_path, title, subtitle, key):
 
 
 def build_card_content(title, subtitle):
-    """Returns a container with the texts in the card."""
+    """Returns a container with the texts of the card."""
     title = sg.Text(
         text=title,
         background_color=colors.WHITE,

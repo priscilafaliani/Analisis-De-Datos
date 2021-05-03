@@ -1,3 +1,13 @@
+"""A card pop up is built to show information about a card.
+
+    It has 2 selection buttons, 'analyse' or 'cancel'.
+    The windows is make in 3 sections:
+        - The one that changes: 
+        the content, the information. 
+        - The one that doesn't. The icon, the theme.
+        - The buttons, one of them has a given key,
+        to recognize the result from this popup.
+"""
 import PySimpleGUI as sg
 
 from src.globals.texts import general
@@ -6,6 +16,7 @@ from src.globals import paths, keys, colors
 from src.widgets import titlebar, fillers, button
 
 
+# window constants
 POPUP_BUTTON_SIZE = (35, 2)
 # defines the width of the card 
 SUBTITLE_SIZE = (50, None)
@@ -17,7 +28,7 @@ POPUP_BUTTON_FONT = ('times', 15)
 
 
 def build(key, title, subtitle, content):
-    """Builds a pop up which shows information about the selected card."""
+    """Returns a popup with the information given."""
     ttitlebar = titlebar.build()
     
     # space between icon and top border

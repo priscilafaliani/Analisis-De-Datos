@@ -1,7 +1,7 @@
-from src.windows import build_window
+from src.windows.popups import filebrowse_popup
 
 
 def start():
-    window = build_window.build()
+    window = filebrowse_popup.build()
     event, values = window.read(close=True)
     return values['-FOLDER-']

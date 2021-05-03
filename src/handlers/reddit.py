@@ -1,3 +1,4 @@
+"""A 'pseudo' analysis. Not useful, but is here bc he can."""
 import csv
 import collections
 
@@ -15,11 +16,15 @@ def analyse(filepath):
         # Header.
         print(next(reader))
         
-        posts = collections.Counter()
-        for post in reader:
-            key = (post[TITLE_COLUMN_INDEX], post[TEXT_COLUMN_INDEX])
-            posts[key] = int(post[UPVOTES_COLUMN_INDEX])
+        # posts = collections.Counter()
+        # for post in reader:
+        #     key = (post[TITLE_COLUMN_INDEX], post[TEXT_COLUMN_INDEX])
+        #     posts[key] = int(post[UPVOTES_COLUMN_INDEX])
         
+        # get the posts
+        
+
+
     return clear_format(posts.most_common(10))
 
 

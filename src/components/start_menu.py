@@ -1,7 +1,7 @@
-from src.windows import start_menu
+from src.windows.menus import start_menu
 from src.globals import keys
 
-from src.components import popup
+from src.components import card_popup
 from src.components import menu_reddit
 
 from src.handlers.popups import handle_popup

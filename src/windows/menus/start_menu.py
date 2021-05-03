@@ -1,20 +1,36 @@
-"""The first window shown in the program."""
+"""The first window shown in the program.
+
+    Is a card menu, see -> src/windows/card_menu.py.
+"""
 import PySimpleGUI as sg
 
-from src.windows import menu
-
-from src.globals import keys, paths, colors
-from src.globals.texts import reddit_texts, music_texts, gs_texts
+from src.windows.menus import card_menu
 
 from src.widgets import card
 
+from src.globals import keys, paths
+
+# the texts for the cards
+from src.globals.texts import reddit_texts, music_texts, gs_texts
+
+
+# constants for this menu
+BUTTON_MESSAGE = 'SALIR'
+BUTTON_SIZE = (50, 2)
+
 
 def build():
-    return menu.build(build_card_section(), 'SALIR', keys.EXIT_EVENT, (50, 2))
+    """Builds menu with the cards from the build_card_section function."""
+    return card_menu.build(
+        build_card_section(), 
+        BUTTON_MESSAGE, 
+        keys.EXIT_EVENT, 
+        BUTTON_SIZE
+    )
 
 
 def build_card_section():
-    """Returns a container with a row of cards for the menu."""
+    """Builds a row with the cards of reddit, music and games sales."""
     reddit = card.build(
         paths.REDDIT_ICON,
         reddit_texts.REDDIT_CARD_TITLE,
@@ -40,7 +56,6 @@ def build_card_section():
         layout=[
             [reddit, music, games_sales]
         ],
-        background_color=colors.BACKGROUND,
         element_justification='c',
         vertical_alignment='c'
     )
